@@ -13,6 +13,7 @@
 		C71BBE5222EF70F8002D6808 /* DualViewCountdownTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C71BBE5022EF70F8002D6808 /* DualViewCountdownTimer.xcdatamodeld */; };
 		C71BBE5422EF70FB002D6808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71BBE5322EF70FB002D6808 /* Assets.xcassets */; };
 		C71BBE5722EF70FB002D6808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71BBE5522EF70FB002D6808 /* LaunchScreen.storyboard */; };
+		C71BBE5F22EF7124002D6808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71BBE5E22EF7124002D6808 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C71BBE5322EF70FB002D6808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C71BBE5622EF70FB002D6808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C71BBE5822EF70FB002D6808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71BBE5E22EF7124002D6808 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C71BBE4922EF70F8002D6808 /* AppDelegate.swift */,
 				C71BBE4B22EF70F8002D6808 /* ViewController.swift */,
+				C71BBE5E22EF7124002D6808 /* SecondViewController.swift */,
 				C71BBE4D22EF70F8002D6808 /* Main.storyboard */,
 				C71BBE5322EF70FB002D6808 /* Assets.xcassets */,
 				C71BBE5522EF70FB002D6808 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71BBE5F22EF7124002D6808 /* SecondViewController.swift in Sources */,
 				C71BBE5222EF70F8002D6808 /* DualViewCountdownTimer.xcdatamodeld in Sources */,
 				C71BBE4C22EF70F8002D6808 /* ViewController.swift in Sources */,
 				C71BBE4A22EF70F8002D6808 /* AppDelegate.swift in Sources */,

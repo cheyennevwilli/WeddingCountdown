@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,96 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DualViewCountdownTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5y-JG-UaU">
+                                <rect key="frame" x="132" y="293" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Iwf-UP-ypi"/>
+                                    <constraint firstAttribute="width" constant="150" id="fxC-Mi-aUr"/>
+                                </constraints>
+                                <state key="normal" image="calendar"/>
+                                <connections>
+                                    <segue destination="hhL-eL-bC9" kind="show" id="857-lD-yTc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAU-Uk-4ie">
+                                <rect key="frame" x="107" y="90" width="200" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cEk-Gg-xle"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cAU-Uk-4ie" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="1Az-Ii-Oac"/>
+                            <constraint firstItem="I5y-JG-UaU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AUy-Jd-6ub"/>
+                            <constraint firstItem="I5y-JG-UaU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NKb-rq-P34"/>
+                            <constraint firstItem="cAU-Uk-4ie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uYa-mL-R5m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GCM-hz-5qh"/>
+                    <connections>
+                        <outlet property="openingLabel" destination="cAU-Uk-4ie" id="HS6-KV-Dyj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="j10-cq-B06">
+            <objects>
+                <viewController id="hhL-eL-bC9" customClass="SecondViewController" customModule="DualViewCountdownTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Opu-Jf-NsB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Have..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gU-LR-92W">
+                                <rect key="frame" x="32" y="193" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Tqq-cl-lhQ"/>
+                                    <constraint firstAttribute="height" constant="350" id="ttb-dB-VdD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-wj-kd9">
+                                <rect key="frame" x="132" y="556" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="2fE-iE-eXp"/>
+                                    <constraint firstAttribute="width" constant="150" id="CIF-cv-JAS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KhQ-wj-kd9" firstAttribute="centerX" secondItem="Opu-Jf-NsB" secondAttribute="centerX" id="7KE-LM-j7X"/>
+                            <constraint firstItem="1gU-LR-92W" firstAttribute="centerX" secondItem="Opu-Jf-NsB" secondAttribute="centerX" id="UPS-sb-fgT"/>
+                            <constraint firstItem="OBa-Pq-PWA" firstAttribute="bottom" secondItem="KhQ-wj-kd9" secondAttribute="bottom" constant="30" id="gtU-wx-YYf"/>
+                            <constraint firstItem="1gU-LR-92W" firstAttribute="centerY" secondItem="Opu-Jf-NsB" secondAttribute="centerY" id="wP0-Pt-xZM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OBa-Pq-PWA"/>
+                    </view>
+                    <connections>
+                        <outlet property="rings" destination="KhQ-wj-kd9" id="9xD-xM-bzN"/>
+                        <outlet property="timerLabel" destination="1gU-LR-92W" id="9VP-mA-d0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5X-1e-Iub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.0144927536232" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="512" height="512"/>
+    </resources>
 </document>
