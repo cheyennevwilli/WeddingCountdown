@@ -19,23 +19,35 @@ let weddingDayDifference = calendar.dateComponents([.day, .hour, .minute, .secon
 var countdownTimer: Timer!
 var totalTime = weddingDayDifference
 
-var running = false
-
 class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        startTimer()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadAnimation()
+    }
+    
+    @objc fileprivate func loadAnimation(){
+        
+        rings.image = UIImage.init(named: "wedding-ring")
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            
+            self.rings.transform = CGAffineTransform(translationX: 0, y: -350)
+        })
     }
     
     @IBOutlet weak var rings: UIImageView!
-    
     @IBOutlet weak var timerLabel: UILabel!
     
-    override func viewDidAppear(_ animated: Bool) {
-            startTimer()
-    
+    @IBAction func backButton(_ sender: Any) {
+        endTimer()
+        
+        performSegue(withIdentifier: "back", sender: self)
     }
     
     func startTimer() {
@@ -85,8 +97,6 @@ class SecondViewController: UIViewController {
         let seconds: Int = totalTime.second!
         let minutes: Int = totalTime.minute!
         //     let hours: Int = totalSeconds / 3600
-        
-        rings.image = UIImage.init(named: "wedding-ring")
         
         return String("\(days) days \n \(hours) hours \n \(minutes) minutes \n \(seconds) seconds \n until you say I DO!!")
     }
